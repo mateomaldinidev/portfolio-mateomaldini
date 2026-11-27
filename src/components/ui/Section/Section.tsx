@@ -3,7 +3,7 @@ import { cx } from '@/lib/cx'
 import { Container } from '../Container/Container'
 import './Section.css'
 
-export type SectionTheme = 'dark' | 'light' | 'cobalt'
+export type SectionTheme = 'dark' | 'light' | 'lime'
 
 type SectionProps = HTMLAttributes<HTMLElement> & {
   theme: SectionTheme

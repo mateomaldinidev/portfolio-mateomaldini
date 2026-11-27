@@ -16,26 +16,26 @@ import './UiPage.css'
 const palette = [
   { name: 'Abismo', hex: '#070A1F', role: 'Fondo de las secciones oscuras y texto de las claras' },
   { name: 'Espuma', hex: '#EEF2F7', role: 'Fondo de las secciones claras y texto de las oscuras' },
-  { name: 'Cobalto', hex: '#2B3BFF', role: 'Marca: links, olas y el fondo de Contacto' },
-  { name: 'Sol', hex: '#FFD23F', role: 'Acento en secciones oscuras y en Contacto' },
-  { name: 'Medusa', hex: '#FF5FA2', role: 'Solo el anillo del puntero sobre algo clickeable' },
+  { name: 'Bosque', hex: '#127A3E', role: 'Acento sobre fondo claro: links y botones' },
+  { name: 'Lima', hex: '#C8FF3D', role: 'Acento en secciones oscuras y fondo de Contacto' },
+  { name: 'Celeste', hex: '#5CE1FF', role: 'Solo el anillo del puntero sobre algo clickeable' },
 ] as const
 
 const themes: { theme: SectionTheme; name: string; note: string }[] = [
   {
     theme: 'dark',
     name: 'Oscuro',
-    note: 'Mar de noche. Fondo abismo, texto espuma y acento sol. Lo usan el hero y Skills.',
+    note: 'Mar de noche. Fondo abismo, texto espuma y acento lima. Lo usan el hero y Skills.',
   },
   {
     theme: 'light',
     name: 'Claro',
-    note: 'La orilla de día. Todo en negativo: fondo espuma, texto abismo y acento cobalto. Lo usan Proyectos y Sobre mí.',
+    note: 'La orilla de día. Todo en negativo: fondo espuma, texto abismo y acento bosque. Lo usan Proyectos y Sobre mí.',
   },
   {
-    theme: 'cobalt',
-    name: 'Cobalto',
-    note: 'El cierre. Fondo cobalto, texto espuma y acento sol. Solo lo usa Contacto.',
+    theme: 'lime',
+    name: 'Lima',
+    note: 'El cierre. Fondo lima pleno, texto y botones en abismo. Solo lo usa Contacto.',
   },
 ]
 

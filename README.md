@@ -38,7 +38,7 @@ GitHub Actions corre `check`, `typecheck`, `test` y `build` en cada pull request
 
 ## Sistema de diseño
 
-Los tokens (colores, tipografías, espaciados, radios y curvas de movimiento) están en `src/styles/tokens.css`. Cada sección declara un tema con `data-theme="dark" | "light" | "cobalt"` y los componentes solo leen los tokens del tema (`--bg`, `--fg`, `--accent`...), así que las secciones claras y oscuras se invierten solas.
+Los tokens (colores, tipografías, espaciados, radios y curvas de movimiento) están en `src/styles/tokens.css`. Cada sección declara un tema con `data-theme="dark" | "light" | "lime"` y los componentes solo leen los tokens del tema (`--bg`, `--fg`, `--accent`...), así que las secciones claras y oscuras se invierten solas.
 
 Con `pnpm dev`, la página [`/ui/`](http://localhost:5173/ui/) muestra la paleta, la tipografía y los componentes base en los tres temas.
 

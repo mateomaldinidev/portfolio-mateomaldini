@@ -36,6 +36,8 @@
   --button-bg: var(--accent);
   --button-fg: var(--accent-ink);
   --button-border: var(--accent);
+  --water: var(--fill-hover);
+  --water-fg: var(--fill-hover-ink);
 }
 
 .button__water {

@@ -3,7 +3,7 @@
  *
  * 1. Primitivos: los 5 colores de la paleta y las escalas. No se usan directo
  *    en los componentes.
- * 2. Temas: cada sección declara data-theme="dark" | "light" | "cobalt" y los
+ * 2. Temas: cada sección declara data-theme="dark" | "light" | "lime" y los
  *    componentes solo leen los tokens semánticos (--bg, --fg, --accent...).
  *    Así el "negativo" entre secciones claras y oscuras sale solo.
  */
@@ -12,9 +12,9 @@
   /* Paleta */
   --color-abismo: #070a1f;
   --color-espuma: #eef2f7;
-  --color-cobalto: #2b3bff;
-  --color-sol: #ffd23f;
-  --color-medusa: #ff5fa2;
+  --color-bosque: #127a3e;
+  --color-lima: #c8ff3d;
+  --color-celeste: #5ce1ff;
 
   /* Tipografías */
   --font-display: "Sora Variable", "Sora", system-ui, sans-serif;
@@ -76,9 +76,11 @@
   --fg-muted: rgb(238 242 247 / 0.66);
   --line: rgb(238 242 247 / 0.14);
   --line-strong: rgb(238 242 247 / 0.32);
-  --accent: var(--color-sol);
+  --accent: var(--color-lima);
   --accent-ink: var(--color-abismo);
-  --focus: var(--color-sol);
+  --focus: var(--color-lima);
+  --fill-hover: var(--color-espuma);
+  --fill-hover-ink: var(--color-abismo);
 }
 
 [data-theme="light"] {
@@ -87,20 +89,24 @@
   --fg-muted: rgb(7 10 31 / 0.64);
   --line: rgb(7 10 31 / 0.14);
   --line-strong: rgb(7 10 31 / 0.32);
-  --accent: var(--color-cobalto);
+  --accent: var(--color-bosque);
   --accent-ink: var(--color-espuma);
-  --focus: var(--color-cobalto);
+  --focus: var(--color-bosque);
+  --fill-hover: var(--color-abismo);
+  --fill-hover-ink: var(--color-espuma);
 }
 
-[data-theme="cobalt"] {
-  --bg: var(--color-cobalto);
-  --fg: var(--color-espuma);
-  --fg-muted: rgb(238 242 247 / 0.78);
-  --line: rgb(238 242 247 / 0.3);
-  --line-strong: rgb(238 242 247 / 0.55);
-  --accent: var(--color-sol);
-  --accent-ink: var(--color-abismo);
-  --focus: var(--color-sol);
+[data-theme="lime"] {
+  --bg: var(--color-lima);
+  --fg: var(--color-abismo);
+  --fg-muted: rgb(7 10 31 / 0.72);
+  --line: rgb(7 10 31 / 0.22);
+  --line-strong: rgb(7 10 31 / 0.5);
+  --accent: var(--color-abismo);
+  --accent-ink: var(--color-lima);
+  --focus: var(--color-abismo);
+  --fill-hover: var(--color-espuma);
+  --fill-hover-ink: var(--color-abismo);
 }
 
 [data-theme] {
