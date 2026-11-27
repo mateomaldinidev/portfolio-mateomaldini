@@ -1,0 +1,99 @@
+/*
+ * El "agua" es un bloque con el borde de arriba ondulado (máscara SVG) que
+ * sube desde abajo. Mientras está visible, la ola se desplaza de costado.
+ */
+.button {
+  --button-bg: transparent;
+  --button-fg: var(--fg);
+  --button-border: var(--fg);
+  --water: var(--fg);
+  --water-fg: var(--bg);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  overflow: hidden;
+  isolation: isolate;
+  border: var(--border-width) solid var(--button-border);
+  border-radius: var(--radius-button);
+  background: var(--button-bg);
+  color: var(--button-fg);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 180ms linear;
+}
+
+.button--primary {
+  --button-bg: var(--accent);
+  --button-fg: var(--accent-ink);
+  --button-border: var(--accent);
+}
+
+.button__water {
+  position: absolute;
+  inset: 0 0 -12px;
+  z-index: -1;
+  background: var(--water);
+  transform: translateY(calc(100% + 12px));
+  transition: transform var(--duration-slow) var(--ease-tide);
+}
+
+.button__water::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% - 1px);
+  left: 0;
+  width: 200%;
+  height: 8px;
+  background: var(--water);
+  mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4c5 0 5-4 10-4s5 4 10 4 5-4 10-4 5 4 10 4v4H0z'/%3E%3C/svg%3E")
+    repeat-x 0 0 / 40px 8px;
+  animation: button-swell 1.4s linear infinite paused;
+}
+
+.button__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.button__icon {
+  flex: none;
+}
+
+@media (hover: hover) {
+  /* El texto cambia de color cuando el agua ya lo cubre casi entero */
+  .button:hover {
+    color: var(--water-fg);
+    transition-delay: 220ms;
+  }
+
+  /* Sube de más para que la ola quede fuera del botón cuando termina de llenarse */
+  .button:hover .button__water {
+    transform: translateY(-12px);
+  }
+
+  .button:hover .button__water::before {
+    animation-play-state: running;
+  }
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+@keyframes button-swell {
+  to {
+    transform: translateX(-40px);
+  }
+}
