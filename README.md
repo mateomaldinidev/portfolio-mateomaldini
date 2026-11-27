@@ -36,6 +36,12 @@ pnpm dev           # http://localhost:5173
 
 GitHub Actions corre `check`, `typecheck`, `test` y `build` en cada pull request.
 
+## Sistema de diseño
+
+Los tokens (colores, tipografías, espaciados, radios y curvas de movimiento) están en `src/styles/tokens.css`. Cada sección declara un tema con `data-theme="dark" | "light" | "cobalt"` y los componentes solo leen los tokens del tema (`--bg`, `--fg`, `--accent`...), así que las secciones claras y oscuras se invierten solas.
+
+Con `pnpm dev`, la página [`/ui/`](http://localhost:5173/ui/) muestra la paleta, la tipografía y los componentes base en los tres temas.
+
 ## Estructura
 
 ```
@@ -46,6 +52,7 @@ src/
 ├── motion/         # Efectos y animaciones encapsuladas: olas, puntero, marea
 ├── data/           # Contenido tipado: proyectos, skills, links de contacto
 ├── hooks/          # Hooks propios
+├── ui/             # Página interna /ui con el sistema de diseño
 ├── lib/            # Utilidades sin React
 └── styles/         # Estilos globales y tokens de diseño
 ```

@@ -1,0 +1,137 @@
+.ui-intro {
+  padding-block-end: var(--space-7);
+}
+
+.ui-back {
+  display: inline-block;
+  margin-block-end: var(--space-7);
+  color: var(--fg-muted);
+  text-decoration: none;
+}
+
+.ui-back:hover {
+  color: var(--accent);
+}
+
+.ui-intro .text-lead {
+  margin-block-start: var(--space-5);
+}
+
+.ui-subhead {
+  margin-block-start: var(--space-8);
+}
+
+.ui-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ui-swatch {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.ui-swatch__chip {
+  height: 7rem;
+  margin-block-end: var(--space-3);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-box);
+}
+
+.ui-swatch__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.ui-swatch__role {
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+
+.ui-spacing {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ui-spacing li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.ui-spacing__bar {
+  height: 0.75rem;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.ui-theme-head {
+  display: grid;
+  gap: var(--space-2);
+  max-width: var(--measure);
+  padding-block-end: var(--space-6);
+  border-bottom: var(--border-width) solid var(--line);
+}
+
+.ui-type {
+  display: grid;
+  gap: var(--space-5);
+  padding-block: var(--space-7);
+  overflow-wrap: anywhere;
+}
+
+.ui-body {
+  max-width: var(--measure);
+}
+
+.ui-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-block-end: var(--space-7);
+}
+
+.ui-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+}
+
+@media (min-width: 64rem) {
+  .ui-boxes {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.ui-box {
+  display: grid;
+  align-content: start;
+  gap: var(--space-5);
+  min-height: 12rem;
+}
+
+.ui-box__note {
+  margin-block-start: calc(var(--space-3) * -1);
+  font-size: var(--text-sm);
+}
+
+.ui-tech,
+.ui-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ui-icons {
+  color: var(--accent);
+}

@@ -9,6 +9,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        ui: fileURLToPath(new URL('./ui/index.html', import.meta.url)),
+      },
+    },
+  },
   test: {
     include: ['src/**/*.test.{ts,tsx}'],
     passWithNoTests: true,
