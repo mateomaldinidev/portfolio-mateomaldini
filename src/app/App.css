@@ -1,0 +1,10 @@
+.placeholder {
+  display: grid;
+  align-content: center;
+  min-height: 100dvh;
+}
+
+.placeholder__role {
+  margin-block: var(--space-4) var(--space-2);
+  color: var(--accent);
+}

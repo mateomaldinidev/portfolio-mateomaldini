@@ -1,53 +1,132 @@
-/* Estilos mínimos de la fase 1. Los tokens de diseño (colores, tipografías,
-   espaciados) se definen en la fase 2. */
+@import "./tokens.css";
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html,
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
-  min-height: 100%;
-}
-
-body {
-  background: #070a1f;
-  color: #eef2f7;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-.placeholder {
-  display: grid;
-  place-content: center;
-  gap: 0.75rem;
   min-height: 100dvh;
-  padding: 1.5rem;
-  text-align: center;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.placeholder__eyebrow,
-.placeholder__status {
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
-  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
-  font-size: 0.875rem;
-  letter-spacing: 0.08em;
-  opacity: 0.7;
+  font-family: var(--font-display);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-heading);
+  text-wrap: balance;
 }
 
-.placeholder__name {
+p {
   margin: 0;
-  font-size: clamp(2.5rem, 10vw, 7rem);
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Con movimiento reducido, todo queda quieto. Es el único lugar con
+   !important (permitido en biome.json): tiene que ganarle a cualquier animación. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Estilos tipográficos reutilizables */
+.text-display {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
   font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
   text-transform: uppercase;
 }
 
-.placeholder__role {
-  margin: 0;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: #ffd23f;
+.text-section {
+  font-family: var(--font-display);
+  font-size: var(--text-section);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: var(--tracking-display);
+}
+
+.text-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-heading);
+}
+
+.text-lead {
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  max-width: var(--measure);
+}
+
+.text-muted {
+  color: var(--fg-muted);
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0;
 }

@@ -1,0 +1,17 @@
+.box {
+  position: relative;
+  padding: clamp(1.25rem, 0.9rem + 1.2vw, 2rem);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-box);
+  transition: border-color var(--duration-base) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .box--interactive:hover {
+    border-color: var(--accent);
+  }
+}
+
+.box--interactive:focus-within {
+  border-color: var(--accent);
+}
